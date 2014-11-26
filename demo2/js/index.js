@@ -4,6 +4,12 @@ $(document).ready(function() {
 	console.log("Time until DOMready: ", Date.now()-timerStart);
 });
 window.onload=function(){
+	var images=["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/2-1.png","img/2-2.png","img/2-3.png","img/2-4.png","img/3-1.png","img/3-2.png","img/3-3.png","img/3-4.png","img/3-5.png"];
+	var length = images.length;
+	for (i = 0; i < length; ++i) {
+    	images[i] = new Image();
+    	images[i].src = images[i];
+  	}
 	console.log("Time until everything loaded: ", Date.now()-timerStart);
 	$(".loading").css("display","none");
 	$(".commonSEC").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
