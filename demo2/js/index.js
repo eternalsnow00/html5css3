@@ -1,18 +1,20 @@
-var timerStart = Date.now();
-$(document).ready(function() {
-	$(".loading").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
-	console.log("Time until DOMready: ", Date.now()-timerStart);
-});
+var images=["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/2-1.png","img/2-2.png","img/2-3.png","img/2-4.png","img/3-1.png","img/3-2.png","img/3-3.png","img/3-4.png","img/3-5.png","img/sprite.png","img/upBnt.png"];
+var length = images.length;
+var num = 1;
+var imgs=function(src){
+	var img = new Image(); 
+	img.onload=function(){
+		document.getElementById("kjls").innerHTML=(parseInt((num/length)*100)+"%");
+		num++;
+	};
+	img.src=src;
+}
+for(var i = 0 ; i< length ;i++){
+	imgs(images[i]);
+}
 window.onload=function(){
-	var images=["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/2-1.png","img/2-2.png","img/2-3.png","img/2-4.png","img/3-1.png","img/3-2.png","img/3-3.png","img/3-4.png","img/3-5.png"];
-	var length = images.length;
-	for (i = 0; i < length; ++i) {
-    	images[i] = new Image();
-    	images[i].src = images[i];
-  	}
-	console.log("Time until everything loaded: ", Date.now()-timerStart);
-	$(".loading").css("display","none");
 	$(".commonSEC").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
+	$(".loading").css("display","none");
 	$(".container").css({"width":($(".commonSEC").length-1)*$(window).height(),"display":"block"});
 	setTimeout(function(){
 		$(".section0").addClass('secBlock');
@@ -33,7 +35,7 @@ window.onload=function(){
 
 	$('.itemnav').on('touchend', function(e){
 		if(fingerY-fingerFirsrtY<-100){
-			var index=Number($(this).attr("data-index"))+1;
+			var index=$(".itemnav").index(this)+1;
 			if(index<$(".itemnav").length){
 				$(this).css("display","none");
 				$(".container").animate({
@@ -44,7 +46,7 @@ window.onload=function(){
 				$(".right_2").css({"left":"100%"});
 			}												
 		}else if(fingerY-fingerFirsrtY>100){				
-			var index=Number($(this).attr("data-index"))-1;
+			var index=$(".itemnav").index(this)-1;
 			if(index>=0){
 				$(this).css("display","none");
 				$(".container").animate({
@@ -70,4 +72,4 @@ window.onload=function(){
 	$(".job_arrow").on("tap",function(){
 		$(".right_2").animate({"left":"100%"},250, 'ease-out');
 	});
-};
+}
