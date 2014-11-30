@@ -1,4 +1,4 @@
-var images=["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/2-1.png","img/2-2.png","img/2-3.png","img/2-4.png","img/3-1.png","img/3-2.png","img/3-3.png","img/3-4.png","img/3-5.png","img/sprite.png","img/upBnt.png"];
+var images=["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/2-1.png","img/2-2.png","img/2-3.png","img/2-4.png","img/3-1.png","img/3-2.png","img/3-3.png","img/3-4.png","img/3-5.png","img/4-1.png","img/4-2.png","img/4-3.png","img/4-4.png","img/4-5.png","img/4-6.png","img/5-1.png","img/5-2.png","img/5-3.png","img/7-1.png","img/7-2.png","img/sprite.png","img/upBnt.png"];
 var length = images.length;
 var num = 1;
 var imgs=function(src){
@@ -13,12 +13,12 @@ for(var i = 0 ; i< length ;i++){
 	imgs(images[i]);
 }
 window.onload=function(){
-	$(".commonSEC").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
-	$(".loading").css("display","none");
-	$(".container").css({"width":($(".commonSEC").length-1)*$(window).height(),"display":"block"});
 	setTimeout(function(){
 		$(".section0").addClass('secBlock');
 		$(".itemnav").eq(0).css('display','block');
+		$(".commonSEC").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
+		$(".loading").css("display","none");
+		$(".container").css({"width":($(".commonSEC").length-1)*$(window).height(),"display":"block"});
 	},2000);
 
 	$('.container').on('touchstart', function(e){ 
@@ -66,7 +66,7 @@ window.onload=function(){
 		}
 	});
 
-	$(".item2_5").on("tap",function(){
+	$(".item2_5,.item7_3").on("tap",function(){
 		$(".right_2").animate({"left":"0px"},250, 'ease-out');
 	});
 	$(".job_arrow").on("tap",function(){
