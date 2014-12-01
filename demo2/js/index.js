@@ -21,7 +21,8 @@ window.onload=function(){
 		$(".container").css({"width":($(".commonSEC").length-1)*$(window).height(),"display":"block"});
 	},2000);
 
-	$('.container').on('touchstart', function(){ 
+	$('.container').on('touchstart', function(e){
+		e.preventDefault();
 	  	fingerFirsrtX = e.touches[0].pageX;
 	  	fingerFirsrtY = e.touches[0].pageY;
 	});

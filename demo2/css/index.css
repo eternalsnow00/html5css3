@@ -482,13 +482,13 @@ html,body{
 	-webkit-animation: zoomInDown 1.5s linear;
 }
 @keyframes zoomInDown{
-	0%{opacity: 0;transform: scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);}
-	60%{opacity:1;transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);}
+	0%{opacity: 0;transform: scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);-webkit-transform:scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);}
+	60%{opacity:1;transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);-webkit-transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);}
 }
 @-webkit-keyframes zoomInDown /* Safari and Chrome */
 {
-	0%{opacity: 0;transform: scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);}
-	60%{opacity:1;transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);}
+	0%{opacity: 0;transform: scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);-webkit-transform:scale3d(0.1,0.1,0.1) translate3d(0, -1000px, 0);}
+	60%{opacity:1;transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);-webkit-transform:scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);}
 }
 
 .item5_3{
