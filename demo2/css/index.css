@@ -38,11 +38,9 @@ html,body{
 }
 .loading_writing{
 	position: absolute;
-	width: 250px;
-	top:65%;
-	left: 50%;
+	top:60%;
+	width: 100%;
 	text-align: center;
-	margin-left: -125px;
 	color: white;
 	font-size: 20px;
 }

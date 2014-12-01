@@ -16,13 +16,12 @@ window.onload=function(){
 	setTimeout(function(){
 		$(".section0").addClass('secBlock');
 		$(".itemnav").eq(0).css('display','block');
-		$(".commonSEC").css({width:document.documentElement.clientWidth,height:document.documentElement.clientHeight});
+		$(".commonSEC").css({width:$(window).width(),height:$(window).height()});
 		$(".loading").css("display","none");
 		$(".container").css({"width":($(".commonSEC").length-1)*$(window).height(),"display":"block"});
 	},2000);
 
-	$('.container').on('touchstart', function(e){ 
-		e.preventDefault();
+	$('.container').on('touchstart', function(){ 
 	  	fingerFirsrtX = e.touches[0].pageX;
 	  	fingerFirsrtY = e.touches[0].pageY;
 	});
