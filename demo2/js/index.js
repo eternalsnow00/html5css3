@@ -34,6 +34,9 @@ window.onload=function(){
 	});
 
 	$('.itemnav').on('touchend', function(e){
+		if(fingerY == null || fingerY == 0){
+			return;
+		}
 		if(fingerY-fingerFirsrtY<-100){
 			var index=$(".itemnav").index(this)+1;
 			if(index<$(".itemnav").length){
@@ -58,12 +61,19 @@ window.onload=function(){
 			}							
 		}
 		if($(".itemnav").children().hasClass('left_2')){
+			if(fingerX == null || fingerX == 0){
+				return;
+			}
 			if(fingerX-fingerFirsrtX<-60){
 				$(this).find(".right_2").animate({"left":"0px"},250, 'ease-out');
 			}else if(fingerX-fingerFirsrtX>60){
 				$(this).find(".right_2").animate({"left":"100%"},250, 'ease-out');
 			}
 		}
+		fingerFirsrtX = 0;
+		fingerFirsrtY = 0;
+		fingerX = 0;
+		fingerY = 0;
 	});
 
 	$(".item2_5,.item7_3").on("tap",function(){
