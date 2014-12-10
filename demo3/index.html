@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+	    <meta content="yes" name="apple-mobile-web-app-capable">
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+	    <meta content="telephone=no" name="format-detection">
+	    <meta content="email=no" name="format-detection">
+	    <title>html5动画效果页实践</title>
+	    <link type="text/css" rel="stylesheet" href="css/index.css" />
+	    <script type="text/javascript" src="js/angular1.3.js"></script>
+	    <script type="text/javascript" src="js/angular-cookie.js"></script>
+	    <script type="text/javascript" src="js/angular-touch.js"></script>
+	</head>
+	<body ng-controller="cookieCtr">
+		<div class="loading">
+			<div class="loading_writing">
+				<p>正在加载ing...<span id="kjls">0%</span></p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="langbtn" ng-click="more()"></div>
+			<div class="lay" ng-click="disappear()"></div>
+			<p class="lang chinese" ng-click="isChange(0)">中文</p>
+			<p class="lang en" ng-click="isChange(1)">English</p>
+			<p class="lang jp" ng-click="isChange(2)">日本語</p>
+			<section class="commonSEC section0" ></section>
+			<section class="commonSEC section1" >
+				<div class="itemnav">
+					<div class="item1_1">
+						<p ng-if="usingCookieStore == 0">程序员之求职简历</p>
+						<p ng-if="usingCookieStore == 1">programmer's resume</p>
+						<p ng-if="usingCookieStore == 2">プログラマの履歴書</p>	
+					</div>
+					<div class="upup"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/zepto.js"></script>
+	    <script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>
