@@ -19,12 +19,12 @@
 				<p>正在加载ing...<span id="kjls">0%</span></p>
 			</div>
 		</div>
-		<div class="container">
-			<div class="langbtn" ng-click="more()"></div>
-			<div class="lay" ng-click="disappear()"></div>
-			<p class="lang chinese" ng-click="isChange(0)">中文</p>
-			<p class="lang en" ng-click="isChange(1)">English</p>
-			<p class="lang jp" ng-click="isChange(2)">日本語</p>
+		<div class="langbtn" ng-click="more()"></div>
+		<div class="lay" ng-click="disappear()"></div>
+		<p class="lang chinese" ng-click="isChange(0)">中文</p>
+		<p class="lang en" ng-click="isChange(1)">English</p>
+		<p class="lang jp" ng-click="isChange(2)">日本語</p>
+		<div class="container">			
 			<section class="commonSEC section0" ></section>
 			<section class="commonSEC section1" >
 				<div class="itemnav">
@@ -32,6 +32,33 @@
 						<p ng-if="usingCookieStore == 0">程序员之求职简历</p>
 						<p ng-if="usingCookieStore == 1">programmer's resume</p>
 						<p ng-if="usingCookieStore == 2">プログラマの履歴書</p>	
+					</div>
+					<div class="item1_2">
+						<p ng-if="usingCookieStore == 0">制作人：蒋平易</p>
+						<p ng-if="usingCookieStore == 1">designer：Pingyi Jiang</p>
+						<p ng-if="usingCookieStore == 2">プロデューサー：蒋平易</p>
+					</div>
+					<div class="upup"></div>
+				</div>
+			</section>
+			<section class="commonSEC section2" >
+				<div class="itemnav">
+					<div class="item2_1">
+						<!-- <canvas id="myCanvas"></canvas> -->
+						<p>关于我</p>
+					</div>
+					<div class="item2_2">
+						<p>年龄：25</p>
+						<p>居住地：上海松江</p>
+						<p>学历：本科</p>
+						<a href="javascript:void(0)" class="persondetail">详情</a>
+					</div>
+					<div class="item2_3">
+						<p>工作经验：2年</p>
+						<p>技能：</p>
+						<p>html<span class="star html"></span></p>
+						<p>css<span class="star css"></span></p>
+						<p>javascript<span class="star js"></span></p>
 					</div>
 					<div class="upup"></div>
 				</div>
