@@ -22,6 +22,7 @@ html,body{
 	height: 100%;
 	overflow: hidden;
 	font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+	background: black;  
 }
 .container{
 	display: none;
