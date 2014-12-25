@@ -46,7 +46,7 @@ document.body.addEventListener(touchend,function(e){
 });
 
 $(".commonSEC").on(touchend,function(){
-	if(touchmoveY == 0 || touchmoveX == 0){
+	if(touchmoveY == 0 || touchmoveX == 0 || !touchmoveY || !touchmoveX){
 		return;
 	}
 	if(Math.abs(absY)>100){
@@ -69,6 +69,7 @@ $(".commonSEC").on(touchend,function(){
 			}, 500, 'ease-out',function(){
 				$(".itemnav").eq(index).css("display","block");
 			});
+			$(".right_2").css({"left":"100%"});
 		}
 	}
 	if($(this).find("*").hasClass('left_2')){
