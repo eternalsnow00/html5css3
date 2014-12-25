@@ -24,29 +24,28 @@ document.body.addEventListener(touchstart, function(e) {
 
 document.body.addEventListener(touchmove, function(e) {
 	e.preventDefault();
-	if(TOUCH != "start"){
-		return;
-	}
-	if ("touchmove" == touchmove) {
-		touchmoveX = e.touches[0].pageX;
-		touchmoveY = e.touches[0].pageY;
-		absX = touchmoveX-touchStartX;
-  		absY = touchmoveY-touchStartY;
-	}else{
-		touchmoveX = e.pageX;
-		touchmoveY = e.pageY;
-		absX = e.pageX-touchStartX;
-  		absY = e.pageY-touchStartY;
+	if(TOUCH == "start"){
+		if ("touchmove" == touchmove) {
+			touchmoveX = e.touches[0].pageX;
+			touchmoveY = e.touches[0].pageY;
+			absX = touchmoveX-touchStartX;
+	  		absY = touchmoveY-touchStartY;
+		}else{
+			touchmoveX = e.pageX;
+			touchmoveY = e.pageY;
+			absX = e.pageX-touchStartX;
+	  		absY = e.pageY-touchStartY;
+		}
 	}
 },false);
 
 document.body.addEventListener(touchend,function(e){
 	e.preventDefault();
-	Touch = "stop";
+	TOUCH = "stop";
 });
 
 $(".commonSEC").on(touchend,function(){
-	if(touchmoveY == 0 || touchmoveX == 0){
+	if(touchmoveY == 0 || touchmoveX == 0 || !touchmoveY || !touchmoveX){
 		return;
 	}
 	if(Math.abs(absY)>100){
@@ -69,6 +68,7 @@ $(".commonSEC").on(touchend,function(){
 			}, 500, 'ease-out',function(){
 				$(".itemnav").eq(index).css("display","block");
 			});
+			$(".right_2").css({"left":"100%"});
 		}
 	}
 	if($(this).find("*").hasClass('left_2')){
