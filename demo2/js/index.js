@@ -24,25 +24,24 @@ document.body.addEventListener(touchstart, function(e) {
 
 document.body.addEventListener(touchmove, function(e) {
 	e.preventDefault();
-	if(TOUCH != "start"){
-		return;
-	}
-	if ("touchmove" == touchmove) {
-		touchmoveX = e.touches[0].pageX;
-		touchmoveY = e.touches[0].pageY;
-		absX = touchmoveX-touchStartX;
-  		absY = touchmoveY-touchStartY;
-	}else{
-		touchmoveX = e.pageX;
-		touchmoveY = e.pageY;
-		absX = e.pageX-touchStartX;
-  		absY = e.pageY-touchStartY;
+	if(TOUCH == "start"){
+		if ("touchmove" == touchmove) {
+			touchmoveX = e.touches[0].pageX;
+			touchmoveY = e.touches[0].pageY;
+			absX = touchmoveX-touchStartX;
+	  		absY = touchmoveY-touchStartY;
+		}else{
+			touchmoveX = e.pageX;
+			touchmoveY = e.pageY;
+			absX = e.pageX-touchStartX;
+	  		absY = e.pageY-touchStartY;
+		}
 	}
 },false);
 
 document.body.addEventListener(touchend,function(e){
 	e.preventDefault();
-	Touch = "stop";
+	TOUCH = "stop";
 });
 
 $(".commonSEC").on(touchend,function(){
